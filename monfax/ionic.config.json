@@ -1,0 +1,7 @@
+{
+  "name": "monfax",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
