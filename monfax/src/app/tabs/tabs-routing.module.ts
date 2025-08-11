@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { LaunchScreenComponent } from '../features/launch-screen/launch-screen.component';
 
 const routes: Routes = [
   {
@@ -20,14 +21,14 @@ const routes: Routes = [
         loadComponent: () => import('../tab3/tab3.page').then(m => m.Tab3Page)
       },
       {
-        path: '',
+        path: 'tabs',
         redirectTo: '/tabs/home',
         pathMatch: 'full'
       }
     ]
   },
   {
-    path: '',
+    path: 'tabs',
     redirectTo: '/tabs/home',
     pathMatch: 'full'
   }
@@ -35,6 +36,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule] // tu avais oublié ça
+  exports: [RouterModule]
 })
 export class TabsPageRoutingModule {}
