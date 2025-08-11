@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { LaunchScreenComponent } from '../features/launch-screen/launch-screen.component';
 
 const routes: Routes = [
   {
@@ -8,32 +9,33 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'home',
+        loadComponent: () => import('../home/home.page').then(m => m.HomePage) 
       },
       {
         path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        loadComponent: () => import('../tab2/tab2.page').then(m => m.Tab2Page) 
       },
       {
         path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        loadComponent: () => import('../tab3/tab3.page').then(m => m.Tab3Page)
       },
       {
-        path: '',
-        redirectTo: '/tabs/tab1',
+        path: 'tabs',
+        redirectTo: '/tabs/home',
         pathMatch: 'full'
       }
     ]
   },
   {
-    path: '',
-    redirectTo: '/tabs/tab1',
+    path: 'tabs',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
 export class TabsPageRoutingModule {}
