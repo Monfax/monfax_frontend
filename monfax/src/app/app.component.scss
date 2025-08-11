@@ -1,0 +1,156 @@
+:host {
+  --ion-safe-area-top: 20px;
+}
+
+.congrats-content {
+  --ion-background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(0, 0, 0, 0.03)
+  );
+  min-height: 100vh;
+  position: relative;
+}
+
+.bg-decor {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at 10% 20%,
+      rgba(99, 102, 241, 0.06),
+      transparent 10%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(16, 185, 129, 0.04),
+      transparent 12%
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.card-wrapper {
+  width: 100%;
+  max-width: 520px;
+  padding: 20px;
+  z-index: 2;
+}
+
+.congrats-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(8px) saturate(120%);
+  border-radius: 16px;
+  padding: 28px 20px;
+  box-shadow: 0 8px 24px rgba(2, 6, 23, 0.35);
+  text-align: center;
+  color: var(--ion-color-primary-contrast, #fff);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.congrats-illus {
+  width: 60%;
+  max-width: 240px;
+  height: auto;
+  margin-bottom: 6px;
+}
+
+.title {
+  font-size: 1.6rem;
+  margin: 0;
+  color: var(--ion-color-primary, #6c5ce7);
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 0.98rem;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.actions {
+  width: 100%;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.primary-btn {
+  --background: linear-gradient(
+    90deg,
+    var(--ion-color-primary, #6c5ce7),
+    #8a7bff
+  );
+  --box-shadow: 0 6px 16px rgba(108, 92, 231, 0.28);
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.secondary-btn {
+  color: var(--ion-color-primary, #6c5ce7);
+  --padding-start: 0;
+  --padding-end: 0;
+}
+
+/* petites animations confettis (décoratives) */
+@keyframes floatUp {
+  0% {
+    transform: translateY(12px) scale(0.9);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-90px) scale(1);
+    opacity: 0;
+  }
+}
+
+/* quelques petits carrés (pseudo-éléments) */
+.congrats-card::before,
+.congrats-card::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background: rgba(108, 92, 231, 0.12);
+  transform: translateY(0);
+  animation: floatUp 3.5s infinite ease-in-out;
+  pointer-events: none;
+}
+
+.congrats-card::before {
+  left: 8%;
+  top: 10%;
+  animation-delay: 0s;
+}
+
+.congrats-card::after {
+  right: 12%;
+  top: 6%;
+  animation-delay: 1.1s;
+}
+
+/* responsive */
+@media (max-width: 420px) {
+  .congrats-illus {
+    width: 72%;
+    max-width: 200px;
+  }
+  .title {
+    font-size: 1.35rem;
+  }
+  .card-wrapper {
+    padding: 12px;
+  }
+}
