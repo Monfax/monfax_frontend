@@ -1,18 +1,30 @@
-<ion-content fullscreen class="congrats-content">
+<ion-content class="congrats-content">
   <div class="bg-decor" aria-hidden="true"></div>
 
   <div class="card-wrapper">
     <div class="congrats-card">
-      <img
-        class="congrats-illus"
-        src="assets/11_CONGRATULATIONS.png"
-        alt="Félicitations"
-      />
-
-      <h1 class="title">Félicitations !</h1>
-      <p class="subtitle">Votre action a été réalisée avec succès.</p>
-
     
+      <div class="emojis">
+        <img id="emojis-1" src="assets/Star-1.png" alt="star1"/>
+        <img id="emojis-2" src="assets/Star.png" alt="star"/>
+        <img id="emojis-3" src="assets/Oval-1.png" alt="oval"/>
+        <img id="emojis-4" src="assets/Oval-2.png" alt="oval2"/>
+        <img id="emojis-5" src="assets/Oval.png" alt="oval"/>
+        <img id="emojis-6" src="assets/Line2-1.png" alt="line1"/>
+        <img id="emojis-7" src="assets/Line2.png" alt="line"/>
+        <img id="emojis-8" src="assets/Triangle-1.png" alt="triangle"/>
+        <img id="emojis-9" src="assets/Triangle.png" alt="triangle"/>
+      
+      </div>
+
+      <div class="avatar-container">
+        <img [src]="avatarPath" alt="Avatar" class="avatar" />
+      </div>
+
+      <h1 class="title">Félicitations !    <div class="confetti-container">  🎉</div> </h1>
+      <p class="subtitle">{{ message }}</p>
+
+      <div class="loading-spinner"></div>
     </div>
   </div>
 </ion-content>
