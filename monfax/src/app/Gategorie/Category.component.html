@@ -1,0 +1,41 @@
+
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">All Category</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Barre de recherche -->
+  <ion-item class="search-bar">
+    <ion-input placeholder="Search for.."></ion-input>
+    <ion-button slot="end">
+      <ion-icon name="search-outline"></ion-icon>
+    </ion-button>
+  </ion-item>
+
+  <!-- Grille des catégories -->
+  <ion-grid class="category-grid">
+    <ion-row>
+      <ion-col
+        size="6"
+        size-sm="4"
+        size-md="3"
+        class="ion-text-center"
+        *ngFor="let category of categories"
+        (click)="selectCategory(category.name)"
+      >
+        <div class="category-item">
+          <div class="category-icon-container">
+            <!-- Utilisation d'une balise <img> pour les icônes SVG -->
+            <img [src]="category.iconUrl" alt="{{ category.name }} Icon" />
+          </div>
+          <span class="category-name">{{ category.name }}</span>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
