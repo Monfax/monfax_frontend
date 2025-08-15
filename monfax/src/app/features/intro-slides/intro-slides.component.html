@@ -1,6 +1,6 @@
 <ion-content>
   <div class="skip-container">
-    <ion-button fill="clear" color="dark" (click)="skip()">Skip</ion-button>
+    <ion-button fill="clear" color="dark" (click)="skip()">Passer</ion-button>
   </div>
 
   <div class="step-content">
@@ -14,7 +14,7 @@
       <ion-buttons slot="end">
         <ion-button (click)="nextStep()">
           <ion-icon *ngIf="!isLastStep()" name="arrow-forward"></ion-icon>
-          <span *ngIf="isLastStep()">Commencer </span>
+          <span *ngIf="isLastStep()">Commencer</span>
         </ion-button>
       </ion-buttons>
     </ion-toolbar>

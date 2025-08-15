@@ -1,0 +1,6 @@
+export enum ExamType {
+    CONTINUOUS_ASSESSMENT = "CONTINUOUS_ASSESSMENT",
+    MAIN_EXAM = "MAIN_EXAM",
+    RESIT = "RESIT"
+  }
+  
