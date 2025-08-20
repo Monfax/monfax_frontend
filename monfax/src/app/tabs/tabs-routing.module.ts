@@ -13,8 +13,8 @@ const routes: Routes = [
         loadComponent: () => import('../home/home.page').then(m => m.HomePage) 
       },
       {
-        path: 'tab2',
-        loadComponent: () => import('../tab2/tab2.page').then(m => m.Tab2Page) 
+        path: 'mes-cours',
+        loadComponent: () => import('../mes-cours/mes-cours.page').then(m => m.MesCoursPage) 
       },
       {
         path: 'tab3',

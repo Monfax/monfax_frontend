@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="welcome">
-      <h2>Salut, Ronald A. Martin</h2>
+      <h2>Salut, {{current_user.username}}</h2>
       <p>Que voulez vous apprendre aujourd'hui?</p>
     </div>
 
@@ -26,12 +26,87 @@
     <div  class="body">
       <div class="exam-section">
         <div class="section-title" >
-          <h1>Nos sujets d'examen</h1>
+          <h1>Nos Sujets d'examen</h1>
           <ion-button fill="clear" class="see-all-button" href="">
             <ion-label >Voir Tout</ion-label>
             <ion-icon name="chevron-forward-outline" color="black"></ion-icon>
           </ion-button>
         </div>
+        <!-- <app-pdf-list></app-pdf-list>  -->
+        <div class="exams-container">
+          <div class="exam-contain" *ngFor="let exam of Exams"  >
+            <img [src]="exam.thumbnailUrl" alt="thumbnail"/>
+            <label class="libelle" >
+              <span style="color: #06574c; font-weight:bold" >
+                {{exam.examType.toLowerCase()}}  
+                <span> {{exam.year}} </span> 
+              </span> 
+              <span> {{exam.title}} </span>
+            </label>
+          </div>
+        </div>
+
+      </div>
+      <div class="popular-course">
+        <div class="section-title" >
+          <h1>Les Cours  Populaires</h1>
+          <ion-button fill="clear" class="see-all-button" href="">
+            <ion-label >Voir Tout</ion-label>
+            <ion-icon name="chevron-forward-outline" color="black"></ion-icon>
+          </ion-button>
+        </div>
+        <div class="sous-section">
+          
+          <ion-button 
+            [color]="selectedSemestre === null ? 'selected' : 'light'"
+            shape="round"
+            (click)="selectSemestre(null)">
+            Tout
+          </ion-button>
+        
+          <div *ngFor="let semestre of SemestresData">
+            <ion-button
+              shape="round"
+              [color]="selectedSemestre === semestre.name ? 'selected' : 'light'"
+              (click)="selectSemestre(semestre.name)">
+              {{ semestre.name }}
+            </ion-button>
+          </div>
+        </div>
+        <div class="courses-container">
+          <div class="course-containt">
+            <div class="course-card" *ngFor="let course of subjects">
+              <img src="assets/default-img-course.png" alt="thumbnail"/>
+              <div class="product-card">
+                <div class="header">
+                  <div class="tag"><span> {{course.filiere}} </span> <span> {{course.niveau}} </span> </div>
+                  <div class="lock-icon">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                  </div>
+                </div>
+                <h2 class="title"> {{course.name}} </h2>
+                <div class="details">
+                  <span class="price">{{ course.price}} fcfa</span>
+                  <span class="separator">|</span>
+                  <span class="rating">
+                    <ion-icon name="star"></ion-icon>
+                  </span>
+                  <span class="separator">|</span>
+                  <span class="sales">100 achats</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer">
+          <div *ngFor="let niv of niveaux" class="card-niv" >
+            <label class="titre-niv"> {{niv}} </label>
+            <label class="Nbre-sujets" >+40</label>
+            <label class="sujets-label">sujets</label>
+          </div>
+        </div>
+      
         
       </div>
     </div>

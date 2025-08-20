@@ -6,8 +6,8 @@ import { ExploreContainerComponent } from '../explore-container/explore-containe
 
 @Component({
   selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss'],
+  templateUrl: 'mes-cours.page.html',
+  styleUrls: ['mes-cours.page.scss'],
   standalone: true,
   imports: [
     IonicModule,
@@ -15,4 +15,4 @@ import { ExploreContainerComponent } from '../explore-container/explore-containe
     ExploreContainerComponent 
   ]
 })
-export class Tab2Page {}
+export class MesCoursPage {}

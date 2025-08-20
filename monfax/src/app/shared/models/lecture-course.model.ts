@@ -1,3 +1,4 @@
+
 export interface SubjectBrief {
   id: number;
   name: string;
@@ -15,9 +16,11 @@ export interface LectureCourse {
   numberOfView: number;
   createdAt: string;
 }
-
+export interface LectureCourseWithThumbnail extends LectureCourse{
+  thumbnailUrl:string
+}
 // mock data
-export const lectureCourseMock: LectureCourse[] = [
+export const lectureCourseMock: LectureCourseWithThumbnail[] = [
   {
     id: 1,
     title: "Intro to Angular",
@@ -28,6 +31,20 @@ export const lectureCourseMock: LectureCourse[] = [
     size: 2048,
     numberOfDownload: 10,
     numberOfView: 100,
-    createdAt: "2025-01-01"
+    createdAt: "2025-01-01",
+    thumbnailUrl: "assets/default-img-course.png"
+  },
+  {
+    id: 1,
+    title: "Les Automates",
+    description: "Cours complet sur les Automates",
+    price: 100,
+    subject: { id: 1, name: "Language Formelle et  Compilation" },
+    resourceUrl: "/courses/intro-angular.pdf",
+    size: 2048,
+    numberOfDownload: 10,
+    numberOfView: 100,
+    createdAt: "2025-01-01",
+    thumbnailUrl: "assets/default-img-course.png"
   }
 ];

@@ -1,10 +1,10 @@
-import { Component, OnInit, ViewChild, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Router } from '@angular/router';
-import { IonicModule, IonicSlides } from '@ionic/angular';
+import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { SwiperOptions } from 'swiper/types';
-import Swiper from 'swiper';
+// import { SwiperOptions } from 'swiper/types';
+// import Swiper from 'swiper';
 
 @Component({
   selector: 'app-intro-slides',
