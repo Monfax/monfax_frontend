@@ -1,0 +1,77 @@
+
+    .course-card {
+        background-color: #fff;
+        border-radius: 15px;
+        padding: 16px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        font-family: 'Mulish', sans-serif;
+        width: 95%; 
+        margin: 10px auto;
+        min-height: 280px; 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .course-card>img{
+        width: 100%;
+        height: 100px;
+        object-fit:fill; 
+    }
+    .product-card {
+        background-color: #fff;
+        border-radius: 15px;
+        font-family: Arial, sans-serif;
+        max-width: 350px;
+        width: 200px;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+  
+  .tag {
+    color: #ff8c00;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .lock-icon {
+    color: #888;
+    font-size: 24px;
+  }
+  
+  .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 0 0 10px 0;
+  }
+  
+  .details {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .price {
+    color: #007bff;
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 5px;
+  }
+  
+  .separator {
+    color: #ccc;
+    margin: 0 8px;
+  }
+  
+  .rating ion-icon {
+    color: #ffb400;
+    font-size: 18px;
+  }

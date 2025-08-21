@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 
-import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 
 @Component({
   selector: 'app-tab2',
@@ -12,7 +11,7 @@ import { ExploreContainerComponent } from '../explore-container/explore-containe
   imports: [
     IonicModule,
     CommonModule,
-    ExploreContainerComponent 
+
   ]
 })
 export class MesCoursPage {}

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
-// import { PdfListComponent } from '../components/pdf-list/pdf-list.component';
 import { FormsModule } from '@angular/forms';
 import { ExamWithThumbnail,examMock } from '../shared/models/exam.model';
 import { Semester,semesterMock } from '../shared/models/semester.model';

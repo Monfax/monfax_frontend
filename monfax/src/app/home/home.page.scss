@@ -120,17 +120,25 @@
   overflow-x: auto;
   scrollbar-width: none;
   background-color: #fff;
-  margin: 15px;
-  flex: 0 0 auto; 
+  margin: 25px;
+  flex: 0 0 auto;
+
+
 }
+
 .course-card {
   background-color: #fff;
   border-radius: 15px;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  max-width: 350px;
-  border: 1.5px solid rgba(0, 0, 0, 0.2); 
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+  padding: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  font-family: 'Mulish', sans-serif;
+  width: 95%; 
+  margin: 10px auto;
+  min-height: 280px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .course-card>img{
@@ -154,46 +162,48 @@
 }
 
 .tag {
-  color: #ff8c00;
-  font-weight: bold;
-  font-size: 14px;
+color: #ff8c00;
+font-weight: bold;
+font-size: 14px;
 }
 
 .lock-icon {
-  color: #888;
-  font-size: 24px;
+color: #888;
+font-size: 24px;
 }
 
 .title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #2c3e50;
-  margin: 0 0 10px 0;
+font-size: 1.2rem;
+font-weight: bold;
+color: #2c3e50;
+margin: 0 0 10px 0;
 }
 
 .details {
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  color: #555;
+display: flex;
+align-items: center;
+font-size: 14px;
+color: #555;
 }
 
 .price {
-  color: #007bff;
-  font-weight: bold;
-  font-size: 14px;
-  margin-right: 5px;
+color: #007bff;
+font-weight: bold;
+font-size: 14px;
+margin-right: 5px;
 }
 
 .separator {
-  color: #ccc;
-  margin: 0 8px;
+color: #ccc;
+margin: 0 8px;
 }
 
 .rating ion-icon {
-  color: #ffb400;
-  font-size: 18px;
+color: #ffb400;
+font-size: 18px;
 }
+
+
 .footer{
   display: flex;
   align-items: center;
