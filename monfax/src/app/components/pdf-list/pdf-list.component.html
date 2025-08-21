@@ -1,0 +1,23 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>Liste des Examens</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <ion-list *ngIf="pdfList$ | async as pdfList">
+    <ion-item *ngFor="let exam of pdfList" (click)="openPdf(exam.resourceUrl)">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="exam.thumbnailUrl" alt="Miniature du PDF"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ exam.title }}</h2>
+        <p>{{ exam.resourceUrl }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  
+  <div *ngIf="!(pdfList$ | async)">
+    <ion-spinner></ion-spinner>
+  </div>
+</ion-content>

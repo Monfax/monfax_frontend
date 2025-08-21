@@ -1,0 +1,234 @@
+
+.home-container {
+    font-family: 'Poppins', sans-serif;
+    padding: 16px;
+  }
+  
+  .section-title {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.section-title>h1{
+    font-weight: 600;
+    font-size: 16px;
+    color: #222;
+}
+.see-all-button{
+    padding-top: 10px;
+    color:#0961F5;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .logo {
+    width: 40px;
+  }
+  
+  .welcome h2 {
+    font-size: 16px;
+    margin: 0;
+  }
+  
+  .welcome p {
+    font-size: 12px;
+    color: #777;
+  }
+  
+  .profile-icon ion-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .search-bar {
+    margin: 12px 0;
+  }
+  .search-icon{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+
+  }
+  .search-bar input {
+    width: 100%;
+    padding:  10px;
+    padding-left: 30px;
+    border-radius: 8px;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.05);
+
+  }
+  .promo-banner {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 12px 0;
+  }
+  .discount {
+    font-size: 12px;
+  }
+.sous-section {
+  display: flex;
+  align-items: center;
+  overflow-x: auto ;
+  scrollbar-width: none;
+  gap: 10px;
+}
+.exams-container{
+  display: flex;
+  align-items: center;
+  overflow-x: auto ;
+  scrollbar-width: none;
+  gap: 10px;
+  flex: 0 0 auto; 
+}
+
+.exam-contain{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.exam-contain > img{
+  width: 100%;
+  height: 100px;
+  object-fit:fill;
+}
+.libelle{
+  display: block;
+  font-size: 12px;
+  width: 150px;
+  text-align: center;
+}
+
+.course-containt{
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  background-color: #fff;
+  margin: 25px;
+  flex: 0 0 auto;
+
+
+}
+
+.course-card {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  font-family: 'Mulish', sans-serif;
+  width: 95%; 
+  margin: 10px auto;
+  min-height: 280px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.course-card>img{
+  width: 100%;
+  height: 100px;
+  object-fit:fill; 
+}
+.product-card {
+  background-color: #fff;
+  border-radius: 15px;
+  font-family: Arial, sans-serif;
+  max-width: 350px;
+  width: 200px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.tag {
+color: #ff8c00;
+font-weight: bold;
+font-size: 14px;
+}
+
+.lock-icon {
+color: #888;
+font-size: 24px;
+}
+
+.title {
+font-size: 1.2rem;
+font-weight: bold;
+color: #2c3e50;
+margin: 0 0 10px 0;
+}
+
+.details {
+display: flex;
+align-items: center;
+font-size: 14px;
+color: #555;
+}
+
+.price {
+color: #007bff;
+font-weight: bold;
+font-size: 14px;
+margin-right: 5px;
+}
+
+.separator {
+color: #ccc;
+margin: 0 8px;
+}
+
+.rating ion-icon {
+color: #ffb400;
+font-size: 18px;
+}
+
+
+.footer{
+  display: flex;
+  align-items: center;
+  overflow-x: auto ;
+  scrollbar-width: none;
+  gap: 10px;
+}
+
+.card-niv{
+  background-color: #007bff;
+  display: flex;
+  width: 120px;
+  height: 120px;
+  padding: 10px;
+  border-radius: 15px;
+  margin: 10px;
+  flex-direction: column;
+  flex: 0 0 auto; 
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+}
+.Nbre-sujets{
+  font-size: 40px;
+  font-family: 'mulish';
+  margin-top: 5px;
+}

@@ -1,0 +1,6 @@
+export enum ExamType {
+    CONTINUOUS_ASSESSMENT = "CONTROLE_CONTINUE",
+    MAIN_EXAM = "SESSION_NORMALE",
+    RESIT = "TRAVEAU_DIRIGEE"
+  }
+  

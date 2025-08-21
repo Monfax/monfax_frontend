@@ -20,7 +20,7 @@ const routes: Routes = [
     component: IntroSlidesComponent
   },
   {
-    path: 'tabs',
+    path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
