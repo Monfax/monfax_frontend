@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
-import { LaunchScreenComponent } from '../features/launch-screen/launch-screen.component';
+
 
 const routes: Routes = [
   {
@@ -17,8 +17,17 @@ const routes: Routes = [
         loadComponent: () => import('../mes-cours/mes-cours.page').then(m => m.MesCoursPage) 
       },
       {
-        path: 'tab3',
-        loadComponent: () => import('../tab3/tab3.page').then(m => m.Tab3Page)
+        path: 'cours',
+        loadComponent: () => import('../cours/cours.page').then(m => m.CoursPage)
+      },
+      {
+        path:'account',
+        loadComponent:()=>import ('../account/account.page').then(m => m.AccountPage)
+      }
+      ,
+      {
+        path: 'mon-bord',
+        loadComponent: () => import('../mon-bord/mon-bord.page').then( m => m.MonBordPage)
       },
       {
         path: 'tabs',

@@ -6,6 +6,7 @@ import { ExamWithThumbnail,examMock } from '../shared/models/exam.model';
 import { Semester,semesterMock } from '../shared/models/semester.model';
 import { User,userMock } from '../shared/models/user.model';
 import { Subject, subjectMock } from '../shared/models/subject.model';
+import { PdfService } from '../core/services/pdf.service';
 
 @Component({
   selector: 'app-home',
@@ -34,7 +35,12 @@ export class HomePage {
       this.selectedSemestre = semestre;
     }
 
-    constructor() {}
+    constructor(private pdfService:PdfService) {}
 
     ngOnInit() {}
+
+    onOpenPdf(pdfUrl:string){
+      this.pdfService.openPdf(pdfUrl)
+    }
+
 }

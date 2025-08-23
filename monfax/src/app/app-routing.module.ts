@@ -39,6 +39,12 @@ const routes: Routes = [
     path: 'categorie-page',
     component: CategoriePageComponent
   },
+  {
+    path: 'pdf-viewer',
+    loadComponent: () =>
+      import('./features/pdf-viewer/pdf-viewer.page').then(m => m.PdfViewerPage),
+  },
+  
 ];
 @NgModule({
   imports: [

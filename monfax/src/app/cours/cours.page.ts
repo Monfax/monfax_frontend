@@ -5,9 +5,9 @@ import { CommonModule } from '@angular/common';
 
 
 @Component({
-  selector: 'app-tab3',
-  templateUrl: 'tab3.page.html',
-  styleUrls: ['tab3.page.scss'],
+  selector: 'app-cours',
+  templateUrl: 'cours.page.html',
+  styleUrls: ['cours.page.scss'],
   standalone: true,
   imports: [
     IonicModule,
@@ -15,4 +15,4 @@ import { CommonModule } from '@angular/common';
 
   ]
 })
-export class Tab3Page {}
+export class CoursPage {}

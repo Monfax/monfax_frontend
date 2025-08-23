@@ -1,0 +1,124 @@
+
+:host {
+    ion-toolbar {
+      --background: #F8FAFF;
+      color: #424242;
+  
+      ion-back-button {
+        --color: #1976D2;
+      }
+  
+      ion-title {
+        color: #424242;
+        font-weight: 500;
+      }
+    }
+  
+    ion-content {
+      --background: #F8FAFF;
+    }
+  }
+  
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .profile-avatar {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+  }
+  
+  .avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #E3F2FD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    ion-icon {
+      font-size: 100px;
+      color: #BBDEFB;
+    }
+  }
+  
+  .edit-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #F8FAFF;
+    padding: 5px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ion-icon {
+      font-size: 20px;
+      color: #1976D2;
+    }
+  }
+  
+  .form-list {
+    background: transparent;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .form-item {
+    --background: transparent;
+    --border-radius: 10px;
+    --border-color: #E0E0E0;
+    --border-width: 1px;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 15px;
+    padding-left: 10px;
+    
+    ion-input, ion-select {
+      --placeholder-color: #BDBDBD;
+      --placeholder-font-weight: 400;
+    }
+    
+    ion-icon {
+      color: #9E9E9E;
+      margin-right: 10px;
+    }
+  
+    ion-select::part(text) {
+      color: #424242;
+    }
+    
+    // Cache le texte du bouton de la date pour le remplacer par le placeholder
+    ion-datetime-button::part(native) {
+      --border-color: transparent;
+      --box-shadow: none;
+      padding-left: 0;
+    }
+  }
+  .flag-icon {
+      width: 25px;
+      height: 25px;
+      margin-right: 8px;
+  }
+  
+  .continue-button {
+    --background: #2196F3;
+    --box-shadow: 0 4px 8px rgba(33, 150, 243, 0.3);
+    --border-radius: 10px;
+    font-weight: bold;
+    height: 50px;
+    width: 100%;
+  
+    span {
+      margin-right: 10px;
+    }
+  }
+  

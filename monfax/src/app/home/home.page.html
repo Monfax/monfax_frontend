@@ -19,9 +19,10 @@
     </div>
 
     <div class="promo-banner">
-      <p class="discount">25% OFF*</p>
-      <h3>Today's Special</h3>
-      <p>Get a Discount for Every Course Order only Valid for Today.!</p>
+      <p class="discount">Sur monFax</p>
+      <h3>Vous pouvez obtenir</h3>
+      <p>Vos cours, vos exercices et les corrections associees. </p>
+      <p>Cliquer ici pour <span  style="color:#00ffdd; font-weight:bold">effectuer un achats rapide</span></p>
     </div>
     <div  class="body">
       <div class="exam-section">
@@ -32,10 +33,9 @@
             <ion-icon name="chevron-forward-outline" color="black"></ion-icon>
           </ion-button>
         </div>
-        <!-- <app-pdf-list></app-pdf-list>  -->
         <div class="exams-container">
-          <div class="exam-contain" *ngFor="let exam of Exams"  >
-            <img [src]="exam.thumbnailUrl" alt="thumbnail"/>
+          <div class="exam-contain" *ngFor="let exam of Exams" (click)="onOpenPdf(exam.resourceUrl)" >
+            <img [src]="exam.thumbnailUrl" alt="thumbnail"  />
             <label class="libelle" >
               <span style="color: #06574c; font-weight:bold" >
                 {{exam.examType.toLowerCase()}}  
@@ -49,7 +49,7 @@
       </div>
       <div class="popular-course">
         <div class="section-title" >
-          <h1>Les Cours  Populaires</h1>
+          <h1>Nos Supports De Cours  </h1>
           <ion-button fill="clear" class="see-all-button" href="">
             <ion-label >Voir Tout</ion-label>
             <ion-icon name="chevron-forward-outline" color="black"></ion-icon>

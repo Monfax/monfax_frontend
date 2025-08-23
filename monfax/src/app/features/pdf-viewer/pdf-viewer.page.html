@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button (click)="goBack()"></ion-back-button>
+    </ion-buttons>
+  <div class="head">
+    <ion-title>Visualisation du PDF</ion-title>
+    <ion-button (click)="zoomIn()" >+</ion-button>
+    <ion-button (click)="zoomOut()" >-</ion-button>
+  </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ng-container *ngIf="pdfUrl; else noPdf">
+    <ion-spinner *ngIf="loading" name="crescent"></ion-spinner>
+    <label *ngIf="loading" >{{pdfUrl}}</label>
+    <pdf-viewer
+    [src]="pdfUrl"
+    [render-text]="true"
+    [original-size]="false"
+    [show-all]="true"
+    [zoom]="zoomLevel"
+    (after-load-complete)="onLoadComplete()"
+    style="display:block; width:100%; height:100vh;">
+  </pdf-viewer>
+  
+  </ng-container>
+
+  <ng-template #noPdf>
+    <ion-text color="medium" class="no-pdf-message">
+      Aucun PDF à afficher
+    </ion-text>
+  </ng-template>
+</ion-content>
