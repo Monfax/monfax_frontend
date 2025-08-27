@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 
+
 import { Subject } from 'src/app/shared/models/subject.model';
 
 @Component({
@@ -16,6 +17,12 @@ export class CourseCardComponent  implements OnInit {
   @Input() 
   course!: Subject;
 
+  @Input() 
+  direction: 'row' | 'column' = 'row';
+
+  @Input()
+  isPaid:boolean=false
+  
   constructor() { }
 
   ngOnInit() {}

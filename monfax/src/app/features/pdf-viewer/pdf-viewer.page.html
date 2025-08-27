@@ -14,7 +14,6 @@
 <ion-content class="ion-padding">
   <ng-container *ngIf="pdfUrl; else noPdf">
     <ion-spinner *ngIf="loading" name="crescent"></ion-spinner>
-    <label *ngIf="loading" >{{pdfUrl}}</label>
     <pdf-viewer
     [src]="pdfUrl"
     [render-text]="true"

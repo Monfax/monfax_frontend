@@ -1,0 +1,88 @@
+.cours-container{
+    font-family: 'Poppins', sans-serif;
+    padding: 16px;
+}
+.head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 35px;
+}
+.toolbar{
+    position:fixed;
+    padding: 16px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 10px 0 20px rgba(0,0,0,0.2);
+    background-color: rgb(255, 255, 255);
+    
+}
+.filter-button{
+    height: 35px;
+    width: 35px;
+}
+.title{
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.buttons-header{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.button-contenu{
+    width: 160px;
+    height: 38px;
+}
+
+.sous-section {
+    z-index: 102;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    background-color: white;
+    height: 100%;
+    gap: 15px;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    box-shadow: 10px 0 20px  rgba(0,0,0,0.3);
+    animation: side-out 0.25s  linear forwards;
+}
+.semester-container{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    gap: 10px;
+}
+.side-title{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+}
+.side-title >label{
+    font-size: 20px;
+    font-weight: bold;
+}
+.cours-list{
+    position: relative;
+    padding: 0 16px 0 16px;
+    top: 80px;
+}
+@keyframes side-out{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 60%;
+    }
+}

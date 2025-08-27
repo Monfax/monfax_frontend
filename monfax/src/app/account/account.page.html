@@ -1,13 +1,84 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>account</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Account</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">account</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+
+  <!-- Profile Card -->
+  <div class="profile-card">
+    <!-- Avatar -->
+    <div class="avatar-container">
+      <ion-avatar class="avatar">
+        <img src="assets/avatar.png" alt="Profile" />
+      </ion-avatar>
+    
+    </div>
+
+    <!-- Name and Email -->
+    <h2 class="name">{{current_user.username}}</h2>
+    <p class="email">{{current_user.email}}</p>
+  </div>
+
+  <!-- Options List -->
+  <ion-list lines="none" class="options-list">
+    <ion-item>
+      <ion-icon slot="start" name="create-outline"></ion-icon>
+      <ion-label>Modifie le  Profil</ion-label>
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="card-outline"></ion-icon>
+      <ion-label>Options de Paiement</ion-label>
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="notifications-outline"></ion-icon>
+      <ion-label>Notifications</ion-label>
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="shield-checkmark-outline"></ion-icon>
+      <ion-label>Security</ion-label>
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="language-outline"></ion-icon>
+      <ion-label>Langage</ion-label>
+      <ion-note slot="end" color="primary">Francais (FR)</ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="moon-outline"></ion-icon>
+      <ion-label> Mode Sombre</ion-label>
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="document-text-outline"></ion-icon>
+      <ion-label>Termes & Conditions</ion-label>
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="help-circle-outline"></ion-icon>
+      <ion-label> Centre D'aide</ion-label>
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="people-outline"></ion-icon>
+      <ion-label>Invite Friends</ion-label>
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+  </ion-list>
+
 </ion-content>
