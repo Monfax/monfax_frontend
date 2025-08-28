@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 export class CongratulationAccountCreateComponent {
 
   
-  @Input() avatarPath: string = 'assets/default-avatar.png';
+  @Input() avatarPath: string = 'assets/avatar.png';
 
 
   @Input() message: string = 'Votre action a été réalisée avec succès.';

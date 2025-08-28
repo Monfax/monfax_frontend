@@ -32,7 +32,12 @@
     height: 150px;
     object-fit:fill;
   }
-  
+
+  .row-direction .exam-thumbnail {
+    width: 150px; 
+    height: 150px; 
+    flex-shrink: 0; 
+  } 
   .exam-content {
     flex: 1;
     display: flex;

@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { BanniereBuyComponent } from '../components/banniere-buy/banniere-buy.component';
 import { CourseCardComponent } from '../components/course-card/course-card.component';
 import { Subject } from '../shared/models/subject.model';
-
-
+import { ExamCardComponent } from '../components/exam-card/exam-card.component';
+import { Exam, ExamWithThumbnail, examMock } from '../shared/models/exam.model';
+import { Correction, correctionMock } from '../shared/models/correction.model';
+import { ExamDetails } from '../shared/services/exam-transform.service';
+import { ExamTransformService } from '../shared/services/exam-transform.service';
+import { Semester, semesterMock } from '../shared/models/semester.model';
 
 @Component({
   selector: 'app-tab2',
@@ -16,10 +20,14 @@ import { Subject } from '../shared/models/subject.model';
     IonicModule,
     CommonModule,
     BanniereBuyComponent,
-    CourseCardComponent
+    CourseCardComponent,
+    ExamCardComponent,
   ]
 })
-export class MesCoursPage {
+export class MesCoursPage implements OnInit {
+
+  constructor(private examTransformService: ExamTransformService) { }
+
 
   courses:Subject[]=[ 
     {
@@ -47,18 +55,6 @@ export class MesCoursPage {
     niveau: 'Licence 2'
   },
   {
-    id: 3,
-    name: 'Langage Formel et Compilation',
-    price: 400,
-    semester_id: '3',
-    exams: [],
-    videos: [],
-    lectureCourses: [],
-    payments: [],
-    filiere: 'Informatique',
-    niveau: 'Licence 3'
-  },
-  {
     id: 4,
     name: 'Langage c',
     price: 250,
@@ -71,13 +67,37 @@ export class MesCoursPage {
     niveau: 'Licence 1'
   }, 
 ]
+exams:ExamWithThumbnail[]=examMock
+semestresData:Semester[]=semesterMock
 
+
+corrections:Correction[]=correctionMock
+
+examDetailsList: ExamDetails[] = [];
   visible=false
+  exoVisible=false
 
   setVisible(){
     this.visible=!this.visible
   }
+  setExoVisible(){
+    this.exoVisible=!this.exoVisible
+  }
 
+
+  get  filteredExamForMyCourse():ExamDetails[]{
+      return this.examDetailsList.filter(exam=>this.courses.some(subj=> subj.id?.toString()===exam.subject_id))
+  }
+
+  ngOnInit() {
+    this.examDetailsList = this.examTransformService.transformExamsToDetails(
+      this.exams,
+      this.courses,
+      this.semestresData,
+      this.corrections,
+    
+    );
+  }
 
 
 }
