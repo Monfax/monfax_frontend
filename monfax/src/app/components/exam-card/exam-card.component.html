@@ -1,0 +1,33 @@
+<div class="exam-card" [ngClass]="{'row-direction': direction === 'row', 'column-direction': direction === 'column'}">
+  <img [src]="exam.thumbnailUrl" alt="Exam Thumbnail" class="exam-thumbnail" />
+
+  <div class="exam-content">
+    <h3 class="exam-title">{{ exam.title }}</h3>
+
+    <div class="exam-meta">
+      <span class="tag">{{ exam.examType }}</span>
+      <span class="separator">|</span>
+      <span>{{ exam.year }}</span>
+    </div>
+
+    <div class="exam-details">
+      <span>{{ exam.filiere }} - {{ exam.niveau }}</span>
+    </div>
+
+    <div class="exam-actions">
+      <button class="btn-primary" (click)="onOpenPdf(exam.resourceUrl,'exam')" [disabled]="loadingExam">
+        <ion-spinner *ngIf="loadingExam" name="dots" slot="start"></ion-spinner>
+        <span *ngIf="!loadingExam">Voir examen</span>
+      </button>
+
+      <button *ngIf="exam.correction" class="btn-secondary" 
+              (click)="onOpenPdf(exam.correction.resourceUrl,'correction')" 
+              [disabled]="loadingCorrection">
+        <ion-spinner *ngIf="loadingCorrection" name="dots" slot="start"></ion-spinner>
+        <span *ngIf="!loadingCorrection">
+          Correction ({{ exam.correction.price }} fcfa)
+        </span>
+      </button>
+    </div>
+  </div>
+</div>

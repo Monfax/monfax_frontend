@@ -1,0 +1,13 @@
+<swiper-container
+  slides-per-view="1"
+  autoplay-delay="2000"
+  [autoplay]="autoplay"
+  navigation
+  pagination
+  loop
+  [style.height]="height"
+>
+  <swiper-slide *ngFor="let img of images">
+    <img [src]="img" alt="banniere img" />
+  </swiper-slide>
+</swiper-container>

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
+import { User, userMock } from '../shared/models/user.model';
 
 @Component({
   selector: 'app-account',
@@ -10,6 +11,7 @@ import { IonicModule } from '@ionic/angular';
   imports:[IonicModule,CommonModule]
 })
 export class AccountPage implements OnInit {
+  current_user:User=userMock[0]
 
   constructor() { }
 

@@ -44,6 +44,14 @@ const routes: Routes = [
     loadComponent: () =>
       import('./features/pdf-viewer/pdf-viewer.page').then(m => m.PdfViewerPage),
   },
+  {
+    path: 'paiement',
+    loadComponent: () => import('./features/paiement/paiement.page').then( m => m.PaiementPage)
+  },
+  {
+    path: 'video',
+    loadComponent: () => import('./features/video/video.page').then( m => m.VideoPage)
+  },
   
 ];
 @NgModule({

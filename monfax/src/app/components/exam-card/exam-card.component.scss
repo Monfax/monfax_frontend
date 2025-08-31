@@ -1,0 +1,119 @@
+.exam-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Mulish', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 420px;
+  margin: 10px auto;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .row-direction {
+    flex-direction: row;
+  }
+  
+  .column-direction {
+    flex-direction: column;
+    align-items: flex-start; 
+  }
+  
+  .exam-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  }
+  
+  .exam-thumbnail {
+    border-radius: 8px;
+    width: 100%;
+    height: 150px;
+    object-fit:fill;
+  }
+
+  .row-direction .exam-thumbnail {
+    width: 150px; 
+    height: 150px; 
+    flex-shrink: 0; 
+  } 
+  .exam-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .exam-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0 0 6px 0;
+  }
+  
+  .exam-meta {
+    font-size: 0.85rem;
+    color: #888;
+    display: flex;
+    align-items: center;
+  }
+  
+  .separator {
+    margin: 0 6px;
+    color: #ccc;
+  }
+  
+  .tag {
+    color: #ff8c00;
+    font-weight: bold;
+  }
+  
+  .exam-details {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 4px;
+  }
+  
+  .exam-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s ease; 
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn-secondary {
+    background-color: #ff8c00;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #cc6d00;
+  }
+  .exam-actions button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  

@@ -1,13 +1,48 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>mon-bord</ion-title>
+  <ion-toolbar style="justify-content: space-between; display:flex; flex-direction:row">
+    <ion-title style="font-weight: bold">Nos Exercices et Corrections</ion-title>
+    <ion-icon name="options-outline" class="option-btn" color="primary" (click)="setVisible()"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">mon-bord</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<div class="content">
+    <div class="options" *ngIf="visible">
+      <div class="option-title">
+        <label class="title" >Filtre</label>
+        <ion-icon name="close-circle-outline" (click)="setVisible()" class="size-button" ></ion-icon>
+      </div>
+      <div class="option-elt">
+        <ion-item class="filter-item">
+          <ion-label>Type de sujet : </ion-label>
+          <ion-select [(ngModel)]="selectedExamType" interface="default">
+            <ion-select-option *ngFor="let examType of examTypes" [value]="examType">
+              {{examType}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item class="filter-item">
+          <ion-label>Semestre : </ion-label>
+          <ion-select [(ngModel)]="selectedSemester" interface="default">
+            <ion-select-option [value]="initialSemester">TOUT</ion-select-option>
+            <ion-select-option *ngFor="let semester of semestresData" [value]="semester">
+              {{semester.name}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item class="filter-item">
+          <ion-label>Annee : </ion-label>
+          <ion-select [(ngModel)]="selectedYear">
+            <ion-select-option [value]="initialValue">Aucune</ion-select-option>
+            <ion-select-option *ngFor="let year of availableYears" [value]="year">
+              {{year}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+    </div>
+    <div>
+      <app-exam-card *ngFor="let exam of filteredExam" [exam]="exam" direction="row"></app-exam-card>
+    </div>
+</div>
 </ion-content>

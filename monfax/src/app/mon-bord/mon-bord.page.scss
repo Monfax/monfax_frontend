@@ -1,0 +1,66 @@
+.content{
+    padding: 16px;
+}
+.options{
+    position: fixed;
+    z-index: 50;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 12px 0;
+    height: 100%;
+    animation: slide-down 0.15s linear forwards ;
+    justify-self: center;
+    max-height: 400px;
+}
+.option-btn{
+    height: 30px; 
+    width:30px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 10;
+}
+.option-title{
+    display: flex;
+    justify-content: space-between ;
+}
+.size-button{
+    height: 35px;
+    width: 35px;
+}
+.title{
+    font-size: 25px;
+    font-weight: bold;
+}
+.filter-item{
+    --background:transparent;
+    --border-color:#ccc;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin: 10px 0;
+    color: #fff;
+}
+ion-select{
+    color:#ffffff;
+    font-weight: bold;
+}
+ion-select-option{
+    color:#222;
+    font-size: 16px;
+    
+}
+
+@keyframes slide-down{
+    0%{
+        width: 80%;
+        height: 0%;
+    }
+    100%{
+        width: 80%;
+        height: 90%;
+        
+    }
+}

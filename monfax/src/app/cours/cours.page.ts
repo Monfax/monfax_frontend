@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
-
-
+import { Subject,subjectMock } from '../shared/models/subject.model';
+import { Semester,semesterMock } from '../shared/models/semester.model';
+import { CourseCardComponent } from '../components/course-card/course-card.component';
 
 @Component({
   selector: 'app-cours',
@@ -12,7 +13,35 @@ import { CommonModule } from '@angular/common';
   imports: [
     IonicModule,
     CommonModule,
-
+    CourseCardComponent
   ]
 })
-export class CoursPage {}
+export class CoursPage {
+
+  SemestresData:Semester[]=semesterMock
+
+  cours:Subject[]=subjectMock
+
+  visible:boolean=false
+
+  selectedSemestre: string | null = null;
+
+  selectedContenu: string|null= 'Cours'
+
+  selectSemestre(semestre: string | null) {
+    this.selectedSemestre = semestre;
+  }
+  selectContenu(contenu:string|null){
+    this.selectedContenu=contenu
+  }
+
+  setVisible(){
+    this.visible=true
+  }
+  closeSide(){
+    this.visible=false
+  }
+
+
+
+}

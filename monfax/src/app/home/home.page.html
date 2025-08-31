@@ -1,8 +1,5 @@
-
-<ion-content>
-
-  <div class="home-container">
-    <div class="header">
+<ion-toolbar style="padding: 16px; background: #F5F9FF;">
+  <div class="header">
       <img style="width: 85px; height:35px " src="assets/icon/logo-monfax.png" alt="Logo" class="logo">
       <div class="profile-icon">
         <ion-icon name="notifications-circle-outline" style="color:#167F71"></ion-icon>
@@ -17,40 +14,49 @@
       <ion-icon name="search" class="search-icon" ></ion-icon>
       <input type="text" placeholder="Search for.." />
     </div>
+</ion-toolbar>
+<ion-content>
 
-    <div class="promo-banner">
-      <p class="discount">Sur monFax</p>
-      <h3>Vous pouvez obtenir</h3>
-      <p>Vos cours, vos exercices et les corrections associees. </p>
-      <p>Cliquer ici pour <span  style="color:#00ffdd; font-weight:bold">effectuer un achats rapide</span></p>
+  <div class="home-container">
+    <div>
+      <app-banniere-buy></app-banniere-buy>
     </div>
+
     <div  class="body">
       <div class="exam-section">
         <div class="section-title" >
           <h1>Nos Sujets d'examen</h1>
-          <ion-button fill="clear" class="see-all-button" href="">
+          <ion-button fill="clear" class="see-all-button" href="/tabs/mon-bord">
             <ion-label >Voir Tout</ion-label>
             <ion-icon name="chevron-forward-outline" color="black"></ion-icon>
           </ion-button>
         </div>
-        <div class="exams-container">
-          <div class="exam-contain" *ngFor="let exam of Exams" (click)="onOpenPdf(exam.resourceUrl)" >
-            <img [src]="exam.thumbnailUrl" alt="thumbnail"  />
-            <label class="libelle" >
-              <span style="color: #06574c; font-weight:bold" >
-                {{exam.examType.toLowerCase()}}  
-                <span> {{exam.year}} </span> 
-              </span> 
-              <span> {{exam.title}} </span>
-            </label>
-          </div>
-        </div>
+        
 
+        <div class="exams-container">
+          <ng-container *ngIf="examDetailsList.length>0; else noExams">
+            <app-exam-card *ngFor="let exam of examDetailsList" [exam]="exam" direction="column"></app-exam-card>
+          </ng-container>
+
+          <ng-template #noExams>
+            <ion-text color="medium">
+              <p>Aucun sujet d'exam disponible</p>
+            </ion-text>
+          </ng-template>
+
+        </div>
+      <div>
+          <app-banniere-pub
+          [images]="images"
+          [autoplay]="true"
+          height="250px"
+        ></app-banniere-pub>
+      </div>
       </div>
       <div class="popular-course">
         <div class="section-title" >
           <h1>Nos Supports De Cours  </h1>
-          <ion-button fill="clear" class="see-all-button" href="">
+          <ion-button fill="clear" class="see-all-button" href="/tabs/cours">
             <ion-label >Voir Tout</ion-label>
             <ion-icon name="chevron-forward-outline" color="black"></ion-icon>
           </ion-button>
@@ -74,31 +80,20 @@
           </div>
         </div>
         <div class="courses-container">
-          <div class="course-containt">
-            <div class="course-card" *ngFor="let course of subjects">
-              <img src="assets/default-img-course.png" alt="thumbnail"/>
-              <div class="product-card">
-                <div class="header">
-                  <div class="tag"><span> {{course.filiere}} </span> <span> {{course.niveau}} </span> </div>
-                  <div class="lock-icon">
-                    <ion-icon name="lock-closed-outline"></ion-icon>
-                  </div>
-                </div>
-                <h2 class="title"> {{course.name}} </h2>
-                <div class="details">
-                  <span class="price">{{ course.price}} fcfa</span>
-                  <span class="separator">|</span>
-                  <span class="rating">
-                    <ion-icon name="star"></ion-icon>
-                  </span>
-                  <span class="separator">|</span>
-                  <span class="sales">100 achats</span>
-                </div>
-              </div>
-            </div>
+          <ng-container *ngIf="subjects.length > 0; else noCourses">
+            
+              <app-course-card *ngFor="let course of subjects" [course]="course" direction="column" ></app-course-card>
+          
+          </ng-container>
       
-          </div>
+          <ng-template #noCourses>
+            <ion-text color="medium">
+              <p>Vous n'avez aucun cours disponible pour le moment.</p>
+            </ion-text>
+          </ng-template>
+
         </div>
+      
         
         <div class="footer">
           <div *ngFor="let niv of niveaux" class="card-niv" >
