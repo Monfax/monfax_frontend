@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lecture vidéo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="video-container" *ngIf="videoUrl">
+    <iframe
+      [src]="videoUrl"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      referrerpolicy="strict-origin-when-cross-origin">
+    </iframe>
+  </div>
+  
+</ion-content>
