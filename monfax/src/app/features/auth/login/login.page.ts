@@ -13,11 +13,12 @@ import { CommonModule } from '@angular/common';
 })
 export class LoginPage {
   loginForm: FormGroup;
+  errorMessage: string = '';
 
   constructor(private fb: FormBuilder, private router: Router) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
@@ -26,6 +27,15 @@ export class LoginPage {
       console.log('Connexion réussie', this.loginForm.value);
       // Naviguer vers la page principale
       this.router.navigate(['/tabs']);
+      this.errorMessage = ''; // Réinitialiser le message d'erreur
+    } else {
+      this.errorMessage = 'Veuillez remplir tous les champs correctement.';
     }
+  }
+
+  googleLogin() {
+    console.log('Connexion Google cliquée');
+    // Ajoutez ici la logique pour la connexion Google (par ex. intégration avec un service d'authentification)
+    // Exemple : this.router.navigate(['/tabs']) après succès
   }
 }
