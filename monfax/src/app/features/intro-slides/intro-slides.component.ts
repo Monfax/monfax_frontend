@@ -55,7 +55,7 @@ export class IntroSlidesComponent implements OnInit {
 
   skip() {
     localStorage.setItem('introSeen', 'true');
-    this.router.navigateByUrl('/tabs/home', { replaceUrl: true });
+    this.router.navigateByUrl('/auth/login', { replaceUrl: true });
   }
 
 }

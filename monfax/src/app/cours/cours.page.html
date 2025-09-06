@@ -1,58 +1,84 @@
-<ion-content >
-    <div class="cours-container">
+<ion-content>
+  <div class="cours-container">
     <div class="toolbar">
       <div class="head">
         <h1 class="title">Nos Cours</h1>
         <ion-icon (click)="setVisible()" name="filter" color="primary" class="filter-button"></ion-icon>
       </div>
       <div class="buttons-header">
-
         <ion-button
-          shape="round" 
+          shape="round"
           class="button-contenu"
           [color]="selectedContenu === 'Cours' ? 'primary' : 'light'"
-          (click)="selectContenu('Cours')"
-          >
+          (click)="selectContenu('Cours')">
           Document
         </ion-button>
 
         <ion-button
-          shape="round" 
+          shape="round"
           class="button-contenu"
           [color]="selectedContenu === 'Video' ? 'primary' : 'light'"
-          (click)="selectContenu('Video')"
-          >
+          (click)="selectContenu('Video')">
           Video
         </ion-button>
-
       </div>
     </div>
-      <div *ngIf="visible" class="sous-section">
-        <div class="side-title">
-          <label>Filtre</label>
-          <ion-icon class="filter-button" name="close" (click)="closeSide()" ></ion-icon>
-        </div>
-        <ion-button 
-          [color]="selectedSemestre === null ? 'selected' : 'light'"
-          shape="round"
-          (click)="selectSemestre(null)">
-          Tout
-        </ion-button>
 
-        <div class="semester-container" >
-          <div *ngFor="let semestre of SemestresData">
-            <ion-button
-              shape="round"
-              [color]="selectedSemestre === semestre.name ? 'selected' : 'light'"
-              (click)="selectSemestre(semestre.name)">
-              {{ semestre.name }}
-            </ion-button>
-          </div>
+    <!-- Filtre -->
+    <div *ngIf="visible" class="sous-section">
+      <div class="side-title">
+        <label>Filtre</label>
+        <ion-icon class="filter-button" name="close" (click)="closeSide()"></ion-icon>
+      </div>
+      <ion-button 
+        [color]="selectedSemestre === null ? 'selected' : 'light'"
+        shape="round"
+        (click)="selectSemestre(null)">
+        Tout
+      </ion-button>
+
+      <div class="semester-container">
+        <div *ngFor="let semestre of SemestresData">
+          <ion-button
+            shape="round"
+            [color]="selectedSemestre === semestre.name ? 'selected' : 'light'"
+            (click)="selectSemestre(semestre.name)">
+            {{ semestre.name }}
+          </ion-button>
         </div>
-      
       </div>
     </div>
-    <div class="cours-list" *ngFor="let cour of cours">
-      <app-course-card [course]="cour" direction="row" ></app-course-card>
-    </div>
-  </ion-content>
+  </div>
+
+  <!-- Liste Cours -->
+  <div *ngIf="selectedContenu === 'Cours'" class="cours-list">
+    <ng-container *ngIf="cours && cours.length > 0; else noCours">
+      <app-course-card 
+        *ngFor="let cour of cours" 
+        [course]="cour" 
+        direction="row">
+      </app-course-card>
+    </ng-container>
+    <ng-template #noCours>
+      <ion-text color="medium" class="empty-message">
+        Aucun document disponible pour le moment 📄
+      </ion-text>
+    </ng-template>
+  </div>
+
+  <!-- Liste Videos -->
+  <div *ngIf="selectedContenu === 'Video'" class="cours-list">
+    <ng-container *ngIf="videos && videos.length > 0; else noVideos">
+      <app-video-card 
+        *ngFor="let video of videos" 
+        [video]="video" 
+        direction="row">
+      </app-video-card>
+    </ng-container>
+    <ng-template #noVideos>
+      <ion-text color="medium" class="empty-message">
+        Aucune vidéo disponible pour le moment 🎥
+      </ion-text>
+    </ng-template>
+  </div>
+</ion-content>

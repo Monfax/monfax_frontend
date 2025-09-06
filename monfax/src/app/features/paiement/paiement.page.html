@@ -1,13 +1,30 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>paiement</ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Paiement Abonnement</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">paiement</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <h2>Sélectionnez une offre</h2>
+
+  <ion-list>
+    <ion-item 
+      *ngFor="let offer of offers"
+      button
+      (click)="selectOffer(offer)"
+      [color]="selectedOffer?.id === offer.id ? 'success' : ''">
+      {{ offer.name }} - {{ offer.price }} FCFA
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf="selectedOffer" class="summary-box">
+    <h3>Résumé</h3>
+    <p><strong>Offre:</strong> {{ selectedOffer.name }}</p>
+    <p><strong>Prix:</strong> {{ selectedOffer.price }} FCFA</p>
+    <p><strong>ID Transaction:</strong> {{ transactionId }}</p>
+
+    <ion-button expand="block" color="secondary" (click)="generatePDF()">
+      Télécharger PDF Pré-paiement
+    </ion-button>
+  </div>
 </ion-content>

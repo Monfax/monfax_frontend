@@ -14,10 +14,14 @@
   animation: fadeIn 1s ease-in;
 }
 
+.logo-screen {
+  width: 70px;
+  height: 70px;
+}
 .logo {
-  width: 120px;
-  border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 150px;
+  height: 75px;
+  object-fit: contain;
 }
 
 .title {

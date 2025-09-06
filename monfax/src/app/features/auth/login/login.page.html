@@ -1,17 +1,18 @@
 
 <ion-header>
   <ion-toolbar>
-    <ion-title>Sign In</ion-title>
+    <ion-title>Connection</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
   <div class="auth-container">
     <div class="logo-container">
-      <img src="../../../../assets/icon/MonFaxLogo.png" alt="monFax Logo" class="logo" />
+      <img src="/assets/icon/LOGO-SCREEN.png" alt="ecran logo" class="logo-screen" />
+      <img src="/assets/icon/MonFaxLogo.png" alt="monFax Logo" class="logo" />
     </div>
-    <h2 class="title">Let's Sign In!</h2>
-    <p class="subtitle">Access Your Account to Continue Your Courses</p>
+    <h2 class="title">Connectons-nous!</h2>
+    <p class="subtitle">Accede a ton compte et poursuit tes cours</p>
 
     <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="form-container">
       <ion-item class="input-item">
@@ -25,21 +26,21 @@
         <ion-input type="password" formControlName="password"></ion-input>
       </ion-item>
       <ion-text color="danger" *ngIf="errorMessage" class="error-message">{{ errorMessage }}</ion-text>
-      <p class="forgot-password"><a href="#">Forgot Password?</a></p>
+      <p class="forgot-password"><a href="#">Mot de passe oublié?</a></p>
 
       <ion-button expand="block" type="submit" [disabled]="!loginForm.valid" class="primary-button">
         <ion-icon name="arrow-forward" slot="end"></ion-icon>
-        Sign In
+        Se Connecter
       </ion-button>
 
-      <p class="text-center alternate-text">Or Continue With</p>
+      <p class="text-center alternate-text">Ou Continuer avec</p>
       <ion-button expand="block" color="light" (click)="googleLogin()" class="google-button">
         <ion-icon name="logo-google" slot="start"></ion-icon>
-        Sign In with Google
+        Se Connecter avec Google
       </ion-button>
 
       <p class="text-center login-link">
-        Don't have an Account? <a routerLink="/register">Sign Up</a>
+        Vous n'avez pas de compte? <a href="/auth/register">S'inscrire</a>
       </p>
     </form>
   </div>

@@ -26,7 +26,7 @@ export class LoginPage {
     if (this.loginForm.valid) {
       console.log('Connexion réussie', this.loginForm.value);
       // Naviguer vers la page principale
-      this.router.navigate(['/tabs']);
+      this.router.navigate(['/tabs/home/']);
       this.errorMessage = ''; // Réinitialiser le message d'erreur
     } else {
       this.errorMessage = 'Veuillez remplir tous les champs correctement.';
