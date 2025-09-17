@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/account" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Mode Sombre</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label>Activer le mode sombre</ion-label>
+    <ion-toggle [(ngModel)]="darkMode"></ion-toggle>
+  </ion-item>
+</ion-content>

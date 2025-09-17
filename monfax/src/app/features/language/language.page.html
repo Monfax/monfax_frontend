@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/account" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Langue</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-radio-group [(ngModel)]="selectedLang">
+    <ion-item>
+      <ion-label>Français</ion-label>
+      <ion-radio slot="end" value="fr"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Anglais</ion-label>
+      <ion-radio slot="end" value="en"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+</ion-content>

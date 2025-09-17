@@ -1,0 +1,27 @@
+<ion-card>
+  <!-- Image -->
+  <img [src]="course.thumbnailUrl" alt="thumbnail" />
+
+  <!-- Contenu -->
+  <div class="card-content">
+    <ion-card-header>
+      <ion-card-title>{{ course.title }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>{{ course.description }}</p>
+      <div class="meta">
+        {{ course.numberOfView }} vues
+      </div>
+      <ion-button 
+      fill="solid" 
+      color="primary"
+      (click)="onOpenCoursePdf(course.resourceUrl)"
+      [disabled]="loadingCourse"
+      >
+      <ion-spinner *ngIf="loadingCourse" name="dots" slot="start"></ion-spinner>
+      <span *ngIf="!loadingCourse">Voir le cours</span>
+      </ion-button>
+    </ion-card-content>
+  </div>
+</ion-card>

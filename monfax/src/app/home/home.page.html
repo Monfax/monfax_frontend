@@ -82,7 +82,7 @@
         <div class="courses-container">
           <ng-container *ngIf="subjects.length > 0; else noCourses">
             
-              <app-course-card *ngFor="let course of subjects" [course]="course" direction="column" ></app-course-card>
+              <app-course-card *ngFor="let course of filteredSubjects" [course]="course" direction="column" ></app-course-card>
           
           </ng-container>
       

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule,AlertController } from '@ionic/angular';
 import { jsPDF } from 'jspdf';
 
 @Component({
@@ -12,15 +12,15 @@ import { jsPDF } from 'jspdf';
 })
 export class PaiementPage {
   offers = [
-    { id: 1, name: 'Abonnement Basic', price: 2000 },
-    { id: 2, name: 'Abonnement Premium', price: 5000 },
-    { id: 3, name: 'Abonnement Business', price: 10000 },
+    { id: 1, name: 'Abonnement Basic',describe:'lorem lorem lorem lorem lorem lorem lorem lorem loreem loe lorem lorem lorem', price: 2000 },
+    { id: 2, name: 'Abonnement Premium',describe:'rem rem rem rem psu psu loe loe loes pre pre lorem lorem lorem lorem lorem lore lorem lorem lorem lorem ', price: 5000 },
+    { id: 3, name: 'Abonnement Business',describe:'lorem lorem lorem lorem lorem lorem lorem loren lorem ipsu lorem ipsu', price: 10000 },
   ];
 
   selectedOffer: any = null;
   transactionId: string = '';
 
-  constructor() {}
+  constructor(private alertCtrl: AlertController) {}
 
   generateTransactionId(): string {
     return 'TX-' + Date.now() + '-' + Math.floor(Math.random() * 10000);
@@ -37,7 +37,7 @@ export class PaiementPage {
     const doc = new jsPDF();
 
     //  Logo (image en Base64 ou URL convertie)
-    const logoUrl = 'assets/logo-monfax.png'; // place ton logo dans src/assets/
+    const logoUrl = 'assets/icon/logo-monfax.png'; // place ton logo dans src/assets/
     const logo = await this.loadImageAsBase64(logoUrl);
     if (logo) {
       doc.addImage(logo, 'PNG', 150, 10, 40, 20); // x, y, width, height
@@ -67,7 +67,7 @@ export class PaiementPage {
     doc.text('- Orange Money: 699 00 00 00', 30, 125);
     doc.text('- MTN Mobile Money: 650 00 00 00', 30, 135);
 
-    // ✅ Mentions légales
+    //  Mentions légales
     doc.setFontSize(10);
     doc.text('--- Mentions légales ---', 20, 250);
     doc.text(
@@ -79,7 +79,7 @@ export class PaiementPage {
       { maxWidth: 170 }
     );
 
-    // ✅ Sauvegarde
+    // Sauvegarde
     doc.save(`prepayment-${this.transactionId}.pdf`);
   }
 
@@ -103,5 +103,14 @@ export class PaiementPage {
       };
       img.onerror = () => resolve(null);
     });
+  }
+  // Confirmer paiement
+  async confirmPayment(method: string) {
+    const alert = await this.alertCtrl.create({
+      header: 'Paiement',
+      message: `Vous avez choisi ${method}. Transaction ID : ${this.transactionId}`,
+      buttons: ['OK']
+    });
+    await alert.present();
   }
 }

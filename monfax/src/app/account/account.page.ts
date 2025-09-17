@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { User, userMock } from '../shared/models/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-account',
@@ -13,7 +14,10 @@ import { User, userMock } from '../shared/models/user.model';
 export class AccountPage implements OnInit {
   current_user:User=userMock[0]
 
-  constructor() { }
+  constructor(private router: Router) {}
+  goTo(page: string) {
+    this.router.navigate([page]);
+  }
 
   ngOnInit() {
   }

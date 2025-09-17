@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { LectureCourse } from '../models/lecture-course.model';
+import { LectureCourse, LectureCourseWithThumbnail } from '../models/lecture-course.model';
+import { Subject } from '../models/subject.model';
 
 @Injectable({
   providedIn: 'root'
@@ -34,4 +35,15 @@ export class LectureCourseService {
   getTotalCourses(): Observable<number> {
     return this.http.get<number>(`${this.apiUrl}/count`);
   }
+  
+}
+
+ export function enrichSubjectsWithCourses(
+  subjects: Subject[],
+  courses: LectureCourseWithThumbnail[]
+): Subject[] {
+  return subjects.map(subject => ({
+    ...subject,
+    lectureCourses: courses.filter(c => c.subject_id === String(subject.id))
+  }));
 }

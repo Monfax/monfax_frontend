@@ -5,7 +5,7 @@ import { LectureCourse } from './lecture-course.model';
 import { Payment } from './payment.model';
 
 export interface Subject {
-  id?: number;
+  id: number;
   name: string;
   price: number;
   semester_id: string;
