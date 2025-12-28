@@ -1,0 +1,12 @@
+ion-toolbar{
+    display: flex ;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 75px;
+    padding: 24 16px 16px 16px;
+}
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+}

@@ -1,4 +1,4 @@
-<ion-toolbar style="padding: 16px; background: #F5F9FF;">
+<ion-toolbar style="padding: 24px 16px 16px 16px;  background: #F5F9FF;">
   <div class="header">
       <img style="width: 85px; height:35px " src="assets/icon/logo-monfax.png" alt="Logo" class="logo">
       <div class="profile-icon">
@@ -82,7 +82,7 @@
         <div class="courses-container">
           <ng-container *ngIf="subjects.length > 0; else noCourses">
             
-              <app-course-card *ngFor="let course of subjects" [course]="course" direction="column" ></app-course-card>
+              <app-course-card *ngFor="let course of filteredSubjects" [course]="course" direction="column" ></app-course-card>
           
           </ng-container>
       

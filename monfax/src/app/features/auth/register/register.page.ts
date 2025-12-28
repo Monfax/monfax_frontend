@@ -33,8 +33,8 @@ export class RegisterPage {
   onRegister() {
     if (this.registerForm.valid) {
       console.log('Inscription réussie', this.registerForm.value);
-      // Naviguer vers la page principale
-      this.router.navigate(['/tabs']);
+      // Naviguer vers la page login
+      this.router.navigate(['/auth/login']);
       this.errorMessage = ''; // Réinitialiser le message d'erreur
     } else {
       this.errorMessage = 'Veuillez remplir tous les champs correctement ou vérifier que les mots de passe correspondent.';

@@ -6,11 +6,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 35px;
+    height: 75px;
 }
 .toolbar{
     position:fixed;
-    padding: 16px;
+    padding: 35px 16px 16px 16px;
     top: 0;
     left: 0;
     width: 100%;
@@ -75,8 +75,8 @@
 }
 .cours-list{
     position: relative;
-    padding: 0 16px 0 16px;
-    top: 80px;
+    padding: 20px 16px 0 16px;
+    margin-top: 150px;
 }
 @keyframes side-out{
     0%{
@@ -86,3 +86,10 @@
         width: 60%;
     }
 }
+.empty-message {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+  }
+  

@@ -9,7 +9,19 @@
   }
 
     .head{
-        display: flex;
-        flex-direction: row;
-        row-gap: 20px;
+
+      display: flex;
+      flex-direction: row;
+      row-gap: 20px;
+
     }
+
+    .buttons{
+      position: absolute;
+      right: 16px;
+      top:0;
+    }
+    ion-toolbar{
+      height: 75px;
+      padding: 24 16px 16px 16px;
+    }                                                                                                          

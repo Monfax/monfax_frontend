@@ -7,7 +7,6 @@ import { ExamWithThumbnail, examMock } from '../shared/models/exam.model';
 import { Semester,semesterMock } from '../shared/models/semester.model';
 import { User,userMock } from '../shared/models/user.model';
 import { Subject, subjectMock } from '../shared/models/subject.model';
-import { PdfService } from '../core/services/pdf.service';
 import { BanniereBuyComponent } from '../components/banniere-buy/banniere-buy.component';
 import { BannierePubComponent } from '../components/banniere-pub/banniere-pub.component';
 import { ExamDetails,ExamTransformService } from '../shared/services/exam-transform.service';
@@ -45,7 +44,16 @@ export class HomePage {
 
     corrections:Correction[]=correctionMock
 
+
     examDetailsList: ExamDetails[] = [];
+
+    get filteredSubjects():Subject[]{
+      if(this.selectedSemestre!=null){
+        const selected=this.SemestresData.find(s=>s.name===this.selectedSemestre)
+        return this.subjects.filter(s=> s.semester_id===selected?.id.toString())
+      }
+      return this.subjects
+    }
 
     images:string[]=[
       'assets/images/image-1.png',
@@ -63,7 +71,7 @@ export class HomePage {
       this.selectedSemestre = semestre;
     }
 
-    constructor(private pdfService:PdfService,private examTransformService: ExamTransformService) {}
+    constructor(private examTransformService: ExamTransformService) {}
 
     ngOnInit() {
       this.examDetailsList = this.examTransformService.transformExamsToDetails(
@@ -74,8 +82,6 @@ export class HomePage {
       );
     }
 
-    onOpenPdf(pdfUrl:string){
-      this.pdfService.openPdf(pdfUrl)
-    }
+
 
 }

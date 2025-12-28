@@ -52,6 +52,39 @@ const routes: Routes = [
     path: 'video',
     loadComponent: () => import('./features/video/video.page').then( m => m.VideoPage)
   },
+
+  {
+    path: 'notifications',
+    loadComponent: () => import('./features/notifications/notifications.page').then( m => m.NotificationsPage)
+  },
+  {
+    path: 'security',
+    loadComponent: () => import('./features/security/security.page').then( m => m.SecurityPage)
+  },
+  {
+    path: 'language',
+    loadComponent: () => import('./features/language/language.page').then( m => m.LanguagePage)
+  },
+  {
+    path: 'dark-mode',
+    loadComponent: () => import('./features/dark-mode/dark-mode.page').then( m => m.DarkModePage)
+  },
+  {
+    path: 'terms',
+    loadComponent: () => import('./features/terms/terms.page').then( m => m.TermsPage)
+  },
+  {
+    path: 'help',
+    loadComponent: () => import('./features/help/help.page').then( m => m.HelpPage)
+  },
+  {
+    path: 'invite',
+    loadComponent: () => import('./features/invite/invite.page').then( m => m.InvitePage)
+  },
+  {
+    path: 'lecture-course-page',
+    loadComponent: () => import('./features/lecture-course-page/lecture-course-page.page').then( m => m.LectureCoursePagePage)
+  },
   
 ];
 @NgModule({

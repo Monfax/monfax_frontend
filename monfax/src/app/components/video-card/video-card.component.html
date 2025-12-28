@@ -1,0 +1,41 @@
+<div class="video-card" [ngClass]="direction">
+  <!-- Thumbnail -->
+  <div class="thumbnail-container">
+    <img src=" assets/default-img-course.png" alt="video thumbnail" />
+    <div class="duration">{{ video.duration }} min</div>
+  </div>
+
+  <!-- Infos -->
+  <div class="video-content">
+    <div class="header">
+      <div class="subject-tag">
+        <ion-icon name="book-outline"></ion-icon>
+        <span>{{ video.subject?.name || 'Sujet inconnu' }}</span>
+      </div>
+      <div class="lock-icon">
+        <ion-icon *ngIf="video.price > 0" name="lock-closed-outline"></ion-icon>
+        <ion-icon *ngIf="video.price === 0" name="checkmark-circle" color="success"></ion-icon>
+      </div>
+    </div>
+
+    <h2 class="title">{{ video.title }}</h2>
+    <p class="description">{{ video.description }}</p>
+
+    <div class="details">
+      <span *ngIf="video.price > 0" class="price">{{ video.price | number }} FCFA</span>
+      <span *ngIf="video.price === 0" class="free">Gratuit</span>
+
+      <span class="separator">|</span>
+
+      <span class="views">
+        <ion-icon name="eye-outline"></ion-icon> {{ video.numberOfView }} vues
+      </span>
+
+      <span class="separator">|</span>
+
+      <span class="downloads">
+        <ion-icon name="download-outline"></ion-icon> {{ video.numberOfDownload }} téléchargements
+      </span>
+    </div>
+  </div>
+</div>

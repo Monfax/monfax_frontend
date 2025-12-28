@@ -1,6 +1,8 @@
 
 
-      <div class="course-card" [ngClass]="{'row-direction': direction === 'row', 'column-direction': direction === 'column'}">
+      <div class="course-card" 
+        (click)="onOpenSubject(course.id,course.name)"
+        [ngClass]="{'row-direction': direction === 'row', 'column-direction': direction === 'column'}">
         <img src="assets/default-img-course.png" alt="thumbnail"/>
         <div class="product-card">
           <div class="header">
@@ -21,10 +23,10 @@
               <ion-icon name="star"></ion-icon>
             </span>
             <span class="separator">|</span>
-            <span  class="sales">100 achats</span>
+            <span  class="sales">100 view</span>
           
-
           </div>
         </div>
+        <!-- <ion-spinner *ngIf="loadingCourse" name="dots" slot="start"></ion-spinner> -->
       </div>
   

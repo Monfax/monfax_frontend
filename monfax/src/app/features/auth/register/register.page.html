@@ -1,22 +1,23 @@
 
 <ion-header>
   <ion-toolbar>
-    <ion-title>Sign Up</ion-title>
+    <ion-title>Inscription</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
   <div class="auth-container">
     <div class="logo-container">
-      <img src="../../../../assets/icon/MonFaxLogo.png" alt="monFax Logo" class="logo" />
+      <img src="/assets/icon/LOGO-SCREEN.png" alt="ecran logo" class="logo-screen" />
+      <img src="/assets/icon/MonFaxLogo.png" alt="monFax Logo" class="logo" />
     </div>
-    <h2 class="title">Getting Started!</h2>
-    <p class="subtitle">Create an Account to Unlock Your Courses</p>
+    <h2 class="title">Commençons!</h2>
+    <p class="subtitle">Créez un compte pour debloquer tes cours</p>
 
     <form [formGroup]="registerForm" (ngSubmit)="onRegister()" class="form-container">
       <ion-item class="input-item">
         <ion-icon name="person" slot="start"></ion-icon>
-        <ion-label position="floating">Name</ion-label>
+        <ion-label position="floating">Nom</ion-label>
         <ion-input type="text" formControlName="name"></ion-input>
       </ion-item>
       <ion-item class="input-item">
@@ -26,29 +27,29 @@
       </ion-item>
       <ion-item class="input-item">
         <ion-icon name="lock-closed" slot="start"></ion-icon>
-        <ion-label position="floating">Password</ion-label>
+        <ion-label position="floating">Mot de passse</ion-label>
         <ion-input type="password" formControlName="password"></ion-input>
       </ion-item>
       <ion-item class="input-item">
         <ion-icon name="lock-closed" slot="start"></ion-icon>
-        <ion-label position="floating">Confirm Password</ion-label>
+        <ion-label position="floating">Confirmez le mot de passe</ion-label>
         <ion-input type="password" formControlName="confirmPassword"></ion-input>
       </ion-item>
       <ion-text color="danger" *ngIf="errorMessage" class="error-message">{{ errorMessage }}</ion-text>
 
       <ion-button expand="block" type="submit" [disabled]="!registerForm.valid" class="primary-button">
         <ion-icon name="arrow-forward" slot="end"></ion-icon>
-        Sign Up
+        S'inscrire
       </ion-button>
 
-      <p class="text-center alternate-text">Or Continue With</p>
+      <p class="text-center alternate-text">Ou Continuer avec</p>
       <ion-button expand="block" color="light" (click)="googleLogin()" class="google-button">
         <ion-icon name="logo-google" slot="start"></ion-icon>
-        Sign Up with Google
+        S'inscrire avec Google
       </ion-button>
 
       <p class="text-center login-link">
-        Already have an Account? <a routerLink="/login">Sign In</a>
+        Vous avez déjà un compte? <a href="/auth/login">Se Connecter</a>
       </p>
     </form>
   </div>
